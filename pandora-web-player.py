@@ -104,16 +104,3 @@ def PlayStation(station = "my station"):
             el.click()
             WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, stationPlayButton))).click()
             break
-
-# Load the pandora webpage, and log in
-driver.get("http://www.pandora.com")
-
-username = 'user@test.com'
-password = 'mypassword'
-
-# Perform initial login and play the first station in the account (alphabetically)
-
-Login(username, password)
-
-myStations = ListStations()
-PlayStation(myStations[0])
